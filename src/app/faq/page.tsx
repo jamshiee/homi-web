@@ -64,7 +64,7 @@ export default function FaqPage() {
             <div className="relative">
               <h2 className="heading-md text-dark">Still have questions?</h2>
               <p className="mt-4 text-sm leading-relaxed text-muted max-w-md mx-auto">
-                Try the in-app AI assistant, or reach out to our team directly. We're here to help you get the most out of Homi.
+                Try the in-app AI assistant, or reach out to our team directly. We&apos;re here to help you get the most out of Homi.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <PlayStoreButton />
