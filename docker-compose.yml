@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    container_name: homi-web
+    restart: always
+    ports:
+      - "3001:80"
