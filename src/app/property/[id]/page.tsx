@@ -8,7 +8,7 @@ interface PropertyPageProps {
 
 // Fetch property data from backend public endpoint
 async function getProperty(id: string) {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.homiholdings.com/api/v1';
   
   try {
     const res = await fetch(`${API_URL}/properties/${id}/public`, { next: { revalidate: 60 } });
