@@ -1,11 +1,14 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'standalone', // NOT 'export'
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.r2.dev', // or your actual R2/CDN domain for property images
+      },
+    ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

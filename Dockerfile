@@ -1,17 +1,19 @@
 # ---------- Build Stage ----------
 FROM node:22-alpine AS builder
-
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm ci
-
 COPY . .
 RUN npm run build
 
-# ---------- Serve Stage ----------
-FROM nginx:alpine
+# ---------- Production Stage ----------
+FROM node:22-alpine
+WORKDIR /app
+ENV NODE_ENV=production
 
-COPY --from=builder /app/out /usr/share/nginx/html
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 
-EXPOSE 80
+EXPOSE 3000
+CMD ["node", "server.js"]
