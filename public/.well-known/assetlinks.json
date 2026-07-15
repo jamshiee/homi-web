@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jamshiiie.homiholdings",
+      "sha256_cert_fingerprints": [
+        "B1:46:D6:27:56:20:76:69:AC:64:F3:64:D1:8E:5C:FE:02:99:9F:25:AF:FE:B1:A1:91:03:40:2C:78:A9:52:8C"
+      ]
+    }
+  }
+]
