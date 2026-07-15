@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ClientButtons } from './ClientButtons';
 
 interface PropertyPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 // Fetch property data from backend public endpoint
@@ -22,7 +22,8 @@ async function getProperty(id: string) {
 }
 
 export async function generateMetadata({ params }: PropertyPageProps): Promise<Metadata> {
-  const property = await getProperty(params.id);
+    const { id } = await params;
+  const property = await getProperty(id);
   
   if (!property) {
     return { title: 'Property Not Found | Homi Holdings' };
@@ -55,7 +56,8 @@ export async function generateMetadata({ params }: PropertyPageProps): Promise<M
 }
 
 export default async function PropertyPage({ params }: PropertyPageProps) {
-  const property = await getProperty(params.id);
+  const { id } = await params;
+  const property = await getProperty(id);
 
   if (!property) {
     return (
