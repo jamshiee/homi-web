@@ -8,10 +8,7 @@ import { HeroMockup } from "@/components/HeroMockup";
 import { DecorativeBlob } from "@/components/DecorativeBlob";
 import { FadeIn, FadeInStagger, staggerItem } from "@/components/motion/FadeIn";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
-import {
-  SITE,
-  TRANSACTION_TYPES,
-} from "@/lib/site";
+import { SITE, TRANSACTION_TYPES } from "@/lib/site";
 import { CategoryShowcase } from "@/components/CategoryShowcase";
 import { HowItWorks } from "@/components/HowItWorks";
 import { BrokerComparison } from "@/components/BrokerComparision";
@@ -110,7 +107,30 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-8 flex flex-wrap gap-4"
             >
-              <PlayStoreButton />
+              {/* <PlayStoreButton /> */}
+              <a
+                href="#final-cta"
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  document.getElementById("final-cta")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
+                className="btn-primary gap-2 px-6 py-3 text-sm"
+                aria-label="Get the App"
+              >
+                <svg
+                  className="h-5 w-5 shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="M3.609 1.814L13.792 12 3.61 22.186a1.006 1.006 0 0 1-.61-.92V2.734a1.006 1.006 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1.002 1.002 0 0 1 0 1.738l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
+                </svg>
+                Get the App
+              </a>
               <Link
                 href="/features/"
                 className="btn-outline border-dark text-dark hover:bg-dark/5"
@@ -119,7 +139,7 @@ export default function HomePage() {
               </Link>
             </motion.div>
 
-            <FadeInStagger
+            {/* <FadeInStagger
               className="mt-8 flex flex-wrap gap-2"
               staggerDelay={0.06}
             >
@@ -152,7 +172,7 @@ export default function HomePage() {
                   <p className="text-xs text-dark/60">{stat.label}</p>
                 </div>
               ))}
-            </motion.div>
+            </motion.div> */}
           </div>
 
           <div className="order-1 hidden lg:order-2 lg:block">
@@ -161,65 +181,66 @@ export default function HomePage() {
         </div>
       </section>
 
-     {/* Property categories */}
-<section className="section-padding relative bg-white">
-  {/* Blob is clipped inside its own wrapper so it doesn't affect card overflow */}
-  <div className="pointer-events-none absolute inset-0 overflow-hidden">
-    <DecorativeBlob
-      className="left-1/2 top-0 h-64 w-64 -translate-x-1/2 bg-brand/20"
-      duration={16}
-    />
-  </div>
-  <div className="section-container relative">
-    <FadeIn>
-      <SectionHeader
-        eyebrow="Property types"
-        title="Every kind of Kerala property, one app"
-        description="Not just houses — land, commercial buildings, and hospitality too."
-      />
-    </FadeIn>
-    <div className="mt-12">
-      <CategoryShowcase />
-    </div>
-  </div>
-</section>
+      {/* Property categories */}
+      <section className="section-padding relative bg-white">
+        {/* Blob is clipped inside its own wrapper so it doesn't affect card overflow */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <DecorativeBlob
+            className="left-1/2 top-0 h-64 w-64 -translate-x-1/2 bg-brand/20"
+            duration={16}
+          />
+        </div>
+        <div className="section-container relative">
+          <FadeIn>
+            <SectionHeader
+              eyebrow="Property types"
+              title="Every kind of Kerala property, one app"
+              description="Not just houses — land, commercial buildings, and hospitality too."
+            />
+          </FadeIn>
+          <div className="mt-12">
+            <CategoryShowcase />
+          </div>
+        </div>
+      </section>
 
-     {/* How it works */}
-<section className="section-padding relative overflow-hidden bg-surface">
-  <div className="section-container">
-    <FadeIn>
-      <SectionHeader
-        eyebrow="How it works"
-        title="From search to move-in, in four steps"
-        description="No agents, no runaround — just you and the property owner."
-      />
-    </FadeIn>
-    <div className="mt-16">
-      <HowItWorks />
-    </div>
-  </div>
-</section>
+      {/* How it works */}
+      <section className="section-padding relative overflow-hidden bg-surface">
+        <div className="section-container">
+          <FadeIn>
+            <SectionHeader
+              eyebrow="How it works"
+              title="From search to move-in, in four steps"
+              description="No agents, no runaround — just you and the property owner."
+            />
+          </FadeIn>
+          <div className="mt-16">
+            <HowItWorks />
+          </div>
+        </div>
+      </section>
 
-{/* No brokers comparison */}
-<section className="section-padding relative overflow-hidden bg-white">
-  <div className="section-container">
-    <FadeIn>
-      <SectionHeader
-        eyebrow="Why Homi"
-        title="Cut out the middleman entirely"
-        description="Same property search, none of the broker fees or delays."
-      />
-    </FadeIn>
-    <div className="mt-14">
-      <BrokerComparison />
-    </div>
-  </div>
-</section>
-
-
+      {/* No brokers comparison */}
+      <section className="section-padding relative overflow-hidden bg-white">
+        <div className="section-container">
+          <FadeIn>
+            <SectionHeader
+              eyebrow="Why Homi"
+              title="Cut out the middleman entirely"
+              description="Same property search, none of the broker fees or delays."
+            />
+          </FadeIn>
+          <div className="mt-14">
+            <BrokerComparison />
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA */}
-      <section className="section-padding relative overflow-hidden bg-dark text-white">
+      <section
+        id="final-cta"
+        className="section-padding relative overflow-hidden bg-dark text-white"
+      >
         <DecorativeBlob
           className="-left-20 top-0 h-80 w-80 bg-brand/20"
           duration={14}
@@ -233,10 +254,10 @@ export default function HomePage() {
             Ready to explore Kerala property?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/70">
-            Download Homi on Google Play. Browse, search, list, and connect —
+            Download Homi and start to explore, search, list, and connect —
             completely free.
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-6 ">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href={SITE.playStoreUrl}
@@ -254,10 +275,24 @@ export default function HomePage() {
                 Download on Play Store
               </Link>
             </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href={SITE.appStoreUrl}
+                className="btn-brand gap-2 px-8 py-4 text-base shadow-xl shadow-brand/20"
+                aria-label="Download Homi on App Store"
+              >
+                <svg
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.79 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.39 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.52 4.09zM12.03 7.25C11.88 5.02 13.69 3.18 15.79 3c.29 2.58-2.34 4.5-3.76 4.25z" />
+                </svg>
+                Download on App Store
+              </Link>
+            </motion.div>
           </div>
-          <p className="mt-4 text-xs text-white/40">
-            Currently in closed testing on Google Play
-          </p>
         </FadeIn>
       </section>
     </>

@@ -48,7 +48,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex shrink-0 items-center gap-2">
-            <PlayStoreButton size="sm" className="hidden sm:inline-flex" />
+            {/* <PlayStoreButton size="sm" className="hidden sm:inline-flex" /> */}
             <button
               type="button"
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/40 bg-white/30 text-dark backdrop-blur-md lg:hidden"
@@ -90,9 +90,9 @@ export function Navbar() {
                   </Link>
                 </li>
               ))}
-              <li className="pt-1 sm:hidden">
+              {/* <li className="pt-1 sm:hidden">
                 <PlayStoreButton size="sm" className="w-full" />
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>

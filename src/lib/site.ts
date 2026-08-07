@@ -11,7 +11,8 @@ export const SITE = {
   description:
     'Browse, search, and list land, houses, commercial spaces, and hospitality properties across Kerala. Free to use — built for Malappuram, Kozhikode, Wayanad, and beyond.',
   url: 'https://homiholdings.com',
-  playStoreUrl: '#',
+  playStoreUrl: 'https://play.google.com/store/apps/details?id=com.jamshiiie.homiholdings',
+  appStoreUrl: 'https://apps.apple.com/in/app/homi-property-finder/id6790275964',
   privacyUrl: 'https://privacy.homiholdings.com',
   contactEmail: 'info@homiholdings.com',
   web3formsKey: 'fcf1e22a-15ef-444f-be5b-dcb3ad3595d0',
@@ -61,7 +62,7 @@ export const PROPERTY_CATEGORIES = [
     icon: '🏢',
   },
   {
-    title: 'Hotel / Lodge / PG',
+    title: 'Hotel / Resorts / Lodge / PG',
     description: 'Hotels, resorts, lodges, and paying guest accommodations.',
     icon: '🏨',
   },

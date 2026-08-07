@@ -14,7 +14,7 @@ const HOMI = [
   'Zero commission — always free',
   'Message property owners directly',
   'Hyperlocal filtering by district & locality',
-  'Verified owner contact via OTP login',
+  'Verified owner contact',
 ];
 
 export function BrokerComparison() {

@@ -6,16 +6,6 @@ import { useRef } from 'react';
 
 const STEPS = [
   {
-    title: 'Verify with OTP',
-    description: 'Quick phone-based login. No passwords, no paperwork.',
-    icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10 1H6a2 2 0 00-2 2v18a2 2 0 002 2h8a2 2 0 002-2V7l-4-4H10zM10 1v6h6M8 14h4m-4 4h8" />
-        <circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
     title: 'Browse listings',
     description: 'Filter by district, locality, and type — see what\'s near you.',
     icon: (
@@ -62,8 +52,8 @@ export function HowItWorks() {
         className="absolute left-0 top-7 hidden h-px bg-dark/40 lg:block"
       />
 
-      {/* Mobile: single column card list / Desktop: 4-col horizontal */}
-      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-6">
+      {/* Mobile: single column card list / Desktop: 3-col horizontal */}
+      <div className="grid gap-4 sm:grid-cols-3 sm:gap-6 lg:gap-6">
         {STEPS.map((step, i) => (
           <motion.div
             key={step.title}
@@ -72,9 +62,9 @@ export function HowItWorks() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            {/* Mobile card — compact horizontal layout */}
-            <div className="flex items-start gap-4 rounded-2xl border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md lg:block lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:hover:shadow-none">
-              {/* Icon + step number */}
+            {/* Mobile card — compact horizontal layout / Desktop — centered column */}
+            <div className="flex items-start gap-4 rounded-2xl border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md lg:flex-col lg:items-center lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:text-center lg:shadow-none lg:hover:shadow-none">
+              {/* Icon */}
               <div className="relative shrink-0 lg:mb-5">
                 <motion.div
                   whileHover={{ scale: 1.08 }}
@@ -83,10 +73,6 @@ export function HowItWorks() {
                 >
                   {step.icon}
                 </motion.div>
-                {/* Step badge */}
-                <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-dark text-[9px] font-black text-white shadow">
-                  {i + 1}
-                </span>
               </div>
 
               {/* Text */}
@@ -101,4 +87,3 @@ export function HowItWorks() {
     </div>
   );
 }
-
